@@ -1,0 +1,222 @@
+.declarations-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.declarations-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+}
+
+.declarations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.declaration-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.declaration-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.declaration-card.selected {
+    border: 2px solid #007BFF;
+}
+
+.declaration-title {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.declaration-passenger {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.declaration-status {
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    margin-bottom: 8px;
+    text-align: center;
+    color: #888;
+}
+
+.declaration-status.under-review {
+    color: #ff9800; 
+}
+
+.declaration-status.waiting-for-inspection {
+    color: #ff9800; 
+}
+
+.declaration-status.canceled {
+    color: #dc3545; 
+}
+
+.declaration-status.waiting-payment {
+    color: #28a745; 
+}
+
+.declaration-status.completed {
+    color: #28a745; 
+}
+
+.declaration-status.awaiting-additional-review {
+    color: #ff9800; 
+}
+
+.declaration-status.restricted {
+    color: #dc3545; 
+}
+
+.declaration-total-cost {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.declaration-details {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.declaration-details h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.declaration-details p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.declaration-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.declaration-details li {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.declaration-details .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.declaration-details button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+    flex: 1;
+}
+
+.declaration-details .cancel-payment {
+    background-color: #dc3545;
+}
+
+.declaration-details button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.close-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.close-details:hover {
+    background-color: #218838;
+}
+
+.loading, .error {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.no-declarations {
+    font-size: 1.2rem;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.payment-form {
+    margin-top: 20px;
+}
+
+.payment-form div {
+    margin-bottom: 10px;
+}
+
+.payment-form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}

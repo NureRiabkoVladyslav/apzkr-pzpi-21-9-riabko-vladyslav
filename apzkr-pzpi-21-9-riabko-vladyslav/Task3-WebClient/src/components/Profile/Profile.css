@@ -1,0 +1,119 @@
+.profile-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-email {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.profile-details {
+    margin-bottom: 30px;
+}
+
+.profile-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-detail label {
+    font-weight: 600;
+    color: #444;
+}
+
+.profile-detail p {
+    color: #555;
+}
+
+.role-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-actions {
+    text-align: center;
+}
+
+.profile-action-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-action-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+    transform: translateY(-3px);
+}
+
+.loading {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.user-not-found {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #e63946;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.profile-action-button.export-button {
+    background-color: #28a745; 
+}
+
+.profile-action-button.export-button:hover {
+    background-color: #218838; 
+}

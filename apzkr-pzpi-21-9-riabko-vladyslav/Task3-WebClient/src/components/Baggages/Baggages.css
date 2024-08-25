@@ -1,0 +1,101 @@
+:root {
+    --primary-color: #007bff;
+    --danger-color: #dc3545;
+    --background-color: #f5f5f5;
+    --border-color: #ddd;
+    --font-family: Arial, sans-serif;
+  }
+  
+  .baggages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .baggages-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .baggage-card,
+  .add-baggage-card {
+    background: #f5f3f3;
+    color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-family);
+  }
+  
+  .baggage-card:hover,
+  .add-baggage-card:hover {
+    background: #dad0d0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .baggage-title,
+  .add-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .baggage-weight {
+    font-size: 0.8rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  .add-baggage-card {
+   
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+
+    width: calc(33% - 1rem);
+    height: 150px;
+    text-align: center;
+  }
+  
+  .plus-icon {
+    font-size: 3rem;
+    color: #fff;
+  }
+  
+  .close-button,
+  .delete-button {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .close-button:hover,
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+
+  .inspection-status.restricted {
+    color: var(--danger-color); /* Красный */
+}

@@ -1,0 +1,117 @@
+[
+    {
+        "id": "e46394eca2066d25",
+        "type": "tab",
+        "label": "Baggage Scanners",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e50d1a62eb365ccb",
+        "type": "http in",
+        "z": "e46394eca2066d25",
+        "name": "Receive Baggage",
+        "url": "/scanBaggage",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "979fad4d6e3a5d94"
+            ]
+        ]
+    },
+    {
+        "id": "979fad4d6e3a5d94",
+        "type": "function",
+        "z": "e46394eca2066d25",
+        "name": "Infrared Scanner",
+        "func": "msg.payload = { scanner: 'Infrared', result: 'Temperature discrepancy detected: Abnormal heat source found' };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "36bf609ff4db36ab"
+            ]
+        ]
+    },
+    {
+        "id": "36bf609ff4db36ab",
+        "type": "function",
+        "z": "e46394eca2066d25",
+        "name": "Ultrasound Scanner",
+        "func": "msg.payload = { scanner: 'Ultrasound', result: 'Contraband items detected: Suspicious object found' };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 100,
+        "wires": [
+            [
+                "c615fbada7d72292"
+            ]
+        ]
+    },
+    {
+        "id": "c615fbada7d72292",
+        "type": "function",
+        "z": "e46394eca2066d25",
+        "name": "X-ray Scanner",
+        "func": "const scanResults = [\n    'Contraband items detected: Suspicious powder found',\n    'Explosive material detected: Dangerous substance found',\n    'Contraband items detected: Suspicious object found',\n    'Unusual density detected: Hidden compartment suspected',\n    'Temperature discrepancy detected: Abnormal heat source found',\n    'Clear'\n];\n\nconst detectionChance = 0.1;\n\nconst randomValue = Math.random();\nconst result = randomValue < detectionChance\n    ? scanResults[Math.floor(Math.random() * (scanResults.length - 1))]\n    : scanResults[scanResults.length - 1]; \n\nmsg.payload = { result: result };\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 100,
+        "wires": [
+            [
+                "395a5ed6ab4e2043"
+            ]
+        ]
+    },
+    {
+        "id": "395a5ed6ab4e2043",
+        "type": "function",
+        "z": "e46394eca2066d25",
+        "name": "Analyze Results",
+        "func": "let status = 'allowed';\nlet errorMessage = 'No issues detected';\n\nconst results = [msg.payload];\nresults.forEach(result => {\n    if (result.result.includes('detected')) {\n        status = 'warned';\n        errorMessage = result.result;\n    }\n});\n\nmsg.payload = { status, error: errorMessage, results: results };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 100,
+        "wires": [
+            [
+                "cb5e1b964d75d61e"
+            ]
+        ]
+    },
+    {
+        "id": "cb5e1b964d75d61e",
+        "type": "http response",
+        "z": "e46394eca2066d25",
+        "name": "Send Result",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 100,
+        "wires": []
+    }
+]

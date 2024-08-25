@@ -1,0 +1,98 @@
+.declarations-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.declarations-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+}
+
+.declarations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.declaration-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.declaration-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.declaration-title {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.declaration-passenger {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.declaration-status {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.no-declarations {
+    font-size: 1.2rem;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.inspect-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.inspect-button:hover {
+    background-color: #0056b3;
+}
+
+.loading, .error {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
